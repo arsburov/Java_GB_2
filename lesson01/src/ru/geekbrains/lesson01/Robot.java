@@ -2,18 +2,30 @@ package ru.geekbrains.lesson01;
 
 public class Robot  implements Runable, Jumpable{
     private String name;
+    private int height;
+    private int distance;
 
-    Robot(String name){
+    public Robot(String name, int height, int distance) {
         this.name = name;
+        this.height = height;
+        this.distance = distance;
     }
 
     @Override
-    public void jump() {
-        System.out.println(String.format("%s jump", name));
+    public void jump(Wall wall) {
+        if (wall.attemptOfJump(height)) {
+            System.out.println(String.format("%s jumped", name));
+        } else {
+            System.out.println(String.format("Jump fault..."));
+        }
     }
 
     @Override
-    public void run() {
-        System.out.println(String.format("%s run", name));
+    public void run(Treadmill treadmill) {
+        if (treadmill.attemptOfRun(distance)) {
+            System.out.println(String.format("%s run", name));
+        } else {
+            System.out.println(String.format("Run fault..."));
+        }
     }
 }

@@ -1,5 +1,5 @@
 package ru.geekbrains.lesson01;
 
 interface Jumpable {
-   void jump();
+   void jump(Wall wall);
 }
