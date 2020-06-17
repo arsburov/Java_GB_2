@@ -1,6 +1,6 @@
 package ru.geekbrains.lesson01;
 
-public class Robot  implements Runable, Jumpable{
+public class Robot  implements Runable, Jumpable, Participant{
     private String name;
     private int height;
     private int distance;

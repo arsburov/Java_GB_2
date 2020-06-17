@@ -1,6 +1,6 @@
 package ru.geekbrains.lesson01;
 
-public class Wall {
+public class Wall implements Obstacle{
     private int height;
 
     public Wall(int height) {
